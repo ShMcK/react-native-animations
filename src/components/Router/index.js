@@ -5,14 +5,13 @@ import styles from './styles'
 
 // Routes
 import Home from '../Home'
-import Transition from '../Transition'
+import Transition from '../Demos/Transition'
 
 export default class Router extends Component {
   static propTypes = {
     
   }
   renderScene(route, navigator) {
-    console.log(route)
     switch (route.title) {
       case 'Transition':
         return <Transition navigator={navigator} />
