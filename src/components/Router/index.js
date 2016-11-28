@@ -7,6 +7,7 @@ import styles from './styles'
 import Home from '../Home'
 import TransitionDemo from '../Demos/Transition'
 import ScaleDemo from '../Demos/Scale'
+import DraggableDemo from '../Demos/Draggable'
 
 export default class Router extends Component {
   renderScene(route, navigator) {
@@ -15,6 +16,8 @@ export default class Router extends Component {
         return <TransitionDemo navigator={navigator} />
       case 'Scale':
         return <ScaleDemo navigator={navigator} />
+      case 'Draggable':
+        return <DraggableDemo navigator={navigator} />
       default:
         return <Home navigator={navigator} />
     }

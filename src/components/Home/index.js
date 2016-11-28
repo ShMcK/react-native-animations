@@ -18,7 +18,7 @@ class Home extends Component {
       }, {
         title: 'Scale',
       }, {
-        title: 'First'
+        title: 'Draggable'
       }, {
         title: 'First'
       }]
