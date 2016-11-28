@@ -4,17 +4,13 @@
  */
 
 import React, { Component, PropTypes } from 'react'
-import { Navigator } from 'react-native'
-
-import Landing from '../Landing'
+import { StyleSheet, Text} from 'react-native'
+import Router from '../Router'
 
 class App extends Component {
-  render() {
+  render(){
     return (
-      <Navigator
-        initialRoute={{ title: 'Demos', index: 0 }}
-        renderScene={(route, navigator) => <Landing />}
-      />
+      <Router />
     )
   }
 }
