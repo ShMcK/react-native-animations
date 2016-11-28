@@ -12,6 +12,7 @@ import ColorDemo from '../Demos/Colors'
 import RotateDemo from '../Demos/Rotate'
 import SequenceDemo from '../Demos/Sequence'
 import StaggerDemo from '../Demos/Stagger'
+import ParallelDemo from '../Demos/Parallel'
 
 export default class Router extends Component {
   renderScene(route, navigator) {
@@ -30,6 +31,8 @@ export default class Router extends Component {
         return <SequenceDemo navigator={navigator} />
       case 'Stagger':
         return <StaggerDemo navigator={navigator} />
+      case 'Parallel':
+        return <ParallelDemo navigator={navigator} />
       default:
         return <Home navigator={navigator} />
     }

@@ -21,6 +21,7 @@ class Home extends Component {
         'Rotate',
         'Sequence',
         'Stagger',
+        'Parallel',
       ]
     }
   }
