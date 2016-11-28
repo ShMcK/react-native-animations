@@ -16,7 +16,7 @@ class Home extends Component {
       demos: [{
         title: 'Transition'
       }, {
-        title: 'First',
+        title: 'Scale',
       }, {
         title: 'First'
       }, {

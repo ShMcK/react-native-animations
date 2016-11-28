@@ -7,10 +7,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
+  button: {
     backgroundColor: '#333',
     width: 100,
-    height: 100
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  text: {
+    color: '#FFF',
   },
 })
 

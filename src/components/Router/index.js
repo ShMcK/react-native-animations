@@ -5,16 +5,16 @@ import styles from './styles'
 
 // Routes
 import Home from '../Home'
-import Transition from '../Demos/Transition'
+import TransitionDemo from '../Demos/Transition'
+import ScaleDemo from '../Demos/Scale'
 
 export default class Router extends Component {
-  static propTypes = {
-    
-  }
   renderScene(route, navigator) {
     switch (route.title) {
       case 'Transition':
-        return <Transition navigator={navigator} />
+        return <TransitionDemo navigator={navigator} />
+      case 'Scale':
+        return <ScaleDemo navigator={navigator} />
       default:
         return <Home navigator={navigator} />
     }
