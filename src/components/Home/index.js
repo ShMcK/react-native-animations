@@ -16,11 +16,13 @@ class Home extends Component {
       demos: [{
         title: 'Transition'
       }, {
-        title: 'Scale',
+        title: 'Scale'
       }, {
         title: 'Draggable'
       }, {
-        title: 'First'
+        title: 'Colors'
+      }, {
+        title: 'Rotate'
       }]
     }
   }

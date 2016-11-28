@@ -8,6 +8,8 @@ import Home from '../Home'
 import TransitionDemo from '../Demos/Transition'
 import ScaleDemo from '../Demos/Scale'
 import DraggableDemo from '../Demos/Draggable'
+import ColorDemo from '../Demos/Colors'
+import RotateDemo from '../Demos/Rotate'
 
 export default class Router extends Component {
   renderScene(route, navigator) {
@@ -18,6 +20,10 @@ export default class Router extends Component {
         return <ScaleDemo navigator={navigator} />
       case 'Draggable':
         return <DraggableDemo navigator={navigator} />
+      case 'Colors':
+        return <ColorDemo navigator={navigator} />
+      case 'Rotate':
+        return <RotateDemo navigator={navigator} />
       default:
         return <Home navigator={navigator} />
     }
