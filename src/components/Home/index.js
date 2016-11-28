@@ -23,6 +23,8 @@ class Home extends Component {
         title: 'Colors'
       }, {
         title: 'Rotate'
+      }, {
+        title: 'Sequence'
       }]
     }
   }

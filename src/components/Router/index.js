@@ -10,6 +10,7 @@ import ScaleDemo from '../Demos/Scale'
 import DraggableDemo from '../Demos/Draggable'
 import ColorDemo from '../Demos/Colors'
 import RotateDemo from '../Demos/Rotate'
+import SequenceDemo from '../Demos/Sequence'
 
 export default class Router extends Component {
   renderScene(route, navigator) {
@@ -24,6 +25,8 @@ export default class Router extends Component {
         return <ColorDemo navigator={navigator} />
       case 'Rotate':
         return <RotateDemo navigator={navigator} />
+      case 'Sequence':
+        return <SequenceDemo navigator={navigator} />
       default:
         return <Home navigator={navigator} />
     }
