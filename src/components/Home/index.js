@@ -13,33 +13,29 @@ class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      demos: [{
-        title: 'Transition'
-      }, {
-        title: 'Scale'
-      }, {
-        title: 'Draggable'
-      }, {
-        title: 'Colors'
-      }, {
-        title: 'Rotate'
-      }, {
-        title: 'Sequence'
-      }]
+      demos: [
+        'Transition',
+        'Scale',
+        'Draggable',
+        'Colors',
+        'Rotate',
+        'Sequence',
+        'Stagger',
+      ]
     }
   }
-  routeTo(title, component) {
+  routeTo(title) {
     this.props.navigator.push({
       title
     })
   }
   demoList() {
-    return this.state.demos.map(({component, title}, i) => {
+    return this.state.demos.map((title, i) => {
       return (
         <View key={i} >
           <Demo
             title={title}
-            routeTo={this.routeTo.bind(this, title, component)} />
+            routeTo={this.routeTo.bind(this, title)} />
         </View>
       )
     })
