@@ -22,6 +22,7 @@ class Home extends Component {
         'Sequence',
         'Stagger',
         'Parallel',
+        'FlipCard',
       ]
     }
   }
