@@ -9,30 +9,62 @@ class ParallelDemo extends Component {
     this.avBarOpacity = new Animated.Value(1)
     this.avCard = new Animated.Value(300)
     this.avButton = new Animated.Value(600)
+
+    // Gesture
+    this.gesturePosY = null
+    this.gestureThreshold = 75
+
+    this.avPosition = new Animated.Value(0)
+    this.animationDuration = 600
   }
-  componentDidMount() {
+  // Gesture
+  detectSwipe(y) {
+    if (this.gesturePosY - y >= this.gestureThreshold) {
+      this.onSwipeUp()
+    } else if (y - this.gesturePosY >= this.gestureThreshold) {
+      this.onSwipeDown()
+    }
+  }
+  onSwipeUp() {
     Animated.parallel([
       Animated.timing(this.avBarY, {
         toValue: -0,
-        duration: 2000,
-        delay: 1000,
+        duration: this.animationDuration,
       }),
       Animated.timing(this.avBarOpacity, {
         toValue: 0,
-        duration: 1500,
-        delay: 1000,
+        duration: this.animationDuration,
       }),
       Animated.timing(this.avCard, {
         toValue: 0,
-        duration: 2000,
-        delay: 1000,
+        duration: this.animationDuration,
       }),
       Animated.timing(this.avButton, {
         toValue: 10,
-        duration: 2000,
-        delay: 1000,
+        duration: this.animationDuration + 100,
       }),
     ]).start()
+  }
+  onSwipeDown() {
+    Animated.parallel([
+      Animated.timing(this.avBarY, {
+        toValue: 275,
+        duration: this.animationDuration,
+      }),
+      Animated.timing(this.avBarOpacity, {
+        toValue: 1,
+        duration: this.animationDuration,
+      }),
+      Animated.timing(this.avCard, {
+        toValue: 300,
+        duration: this.animationDuration,
+      }),
+      Animated.timing(this.avButton, {
+        toValue: 300,
+        duration: this.animationDuration,
+      }),
+    ]).start()
+  
   }
   render() {
     const cardAnimation = {
@@ -47,7 +79,7 @@ class ParallelDemo extends Component {
     }
     const barAnimation = {
       transform: [{
-        translateY: this.avBarY
+        translateY: this.avBarY,
       }],
       opacity: this.avBarOpacity,
     }
@@ -55,10 +87,15 @@ class ParallelDemo extends Component {
       <View style={styles.container} >
 
         <Animated.View style={[styles.searchBar, barAnimation]}>
-          <TextInput style={[styles.searchBarInput]}/>
+          <TextInput style={[styles.searchBarInput]} />
         </Animated.View>
 
-        <Animated.View style={[styles.box, cardAnimation]} />
+        <Animated.View style={[styles.box, cardAnimation]}
+          onStartShouldSetResponder={(e) => {
+            this.gesturePosY = e.nativeEvent.locationY
+          } }
+          onMoveShouldSetResponder={(e) => this.detectSwipe(e.nativeEvent.locationY)}
+          />
 
         <Animated.View style={[styles.button, buttonAnimation]}>
           <Text style={styles.buttonText}> Go </Text>

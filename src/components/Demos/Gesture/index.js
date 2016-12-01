@@ -19,7 +19,7 @@ class GestureDemo extends Component {
   onSwipeUp() {
     console.log('swipe up')
      Animated.spring(this.avPosition, {
-      toValue: -300,
+      toValue: 0,
       friction: 100,
       tension: 350
     }).start()

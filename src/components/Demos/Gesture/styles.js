@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   box: {
     backgroundColor: '#333',
     width: 300,
-    height: 300,
+    height: Dimensions.get('window').height * 0.85,
   },
 })
 
