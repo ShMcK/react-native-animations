@@ -10,7 +10,7 @@ class Demo extends Component {
   render() {
     return (
       <TouchableHighlight style={styles.container} onPress={this.props.routeTo}>
-        <Text>{this.props.title}</Text>
+        <Text style={styles.title}>{this.props.title}</Text>
       </TouchableHighlight>
     )
   }

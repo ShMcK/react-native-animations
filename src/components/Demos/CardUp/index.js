@@ -64,7 +64,7 @@ class ParallelDemo extends Component {
         duration: this.animationDuration,
       }),
     ]).start()
-  
+
   }
   render() {
     const cardAnimation = {
