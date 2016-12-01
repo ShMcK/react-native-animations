@@ -24,6 +24,7 @@ class Home extends Component {
         'Parallel',
         'FlipCard',
         'CardUp',
+        'Gesture',
       ]
     }
   }

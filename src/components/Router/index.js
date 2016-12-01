@@ -15,6 +15,7 @@ import StaggerDemo from '../Demos/Stagger'
 import ParallelDemo from '../Demos/Parallel'
 import FlipCardDemo from '../Demos/FlipCard'
 import CardUpDemo from '../Demos/CardUp'
+import GestureDemo from '../Demos/Gesture'
 
 export default class Router extends Component {
   renderScene(route, navigator) {
@@ -39,6 +40,8 @@ export default class Router extends Component {
         return <FlipCardDemo navigator={navigator} />
       case 'CardUp':
         return <CardUpDemo navigator={navigator} />
+      case 'Gesture':
+        return <GestureDemo navigator={navigator} />
       default:
         return <Home navigator={navigator} />
     }
