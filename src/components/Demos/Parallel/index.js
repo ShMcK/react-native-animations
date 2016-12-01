@@ -14,7 +14,8 @@ class ParallelDemo extends Component {
         duration: 2000,
       }),
       Animated.spring(this.animatedValue2, {
-        toValue: 3
+        toValue: 3,
+        duration: 2000,
       })
     ]).start()
   }

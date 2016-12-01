@@ -23,6 +23,7 @@ class Home extends Component {
         'Stagger',
         'Parallel',
         'FlipCard',
+        'CardUp',
       ]
     }
   }
