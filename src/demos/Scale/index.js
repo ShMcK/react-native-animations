@@ -3,6 +3,11 @@ import { View, Text, Animated, TouchableWithoutFeedback } from 'react-native'
 import styles from './styles'
 
 class ScaleDemo extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Scale',
+    }
+  }
   constructor(props) {
     super(props)
     this.handlePressIn = this.handlePressIn.bind(this)

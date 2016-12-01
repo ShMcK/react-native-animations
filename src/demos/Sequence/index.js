@@ -2,25 +2,36 @@ import React, { Component } from 'react'
 import { View, Animated } from 'react-native'
 import styles from './styles'
 
-class ParallelDemo extends Component {
+class AnimationSequence extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Sequence',
+    }
+  }
   componentWillMount() {
     this.animatedValue1 = new Animated.Value(0)
     this.animatedValue2 = new Animated.Value(1)
   }
   componentDidMount() {
-    Animated.parallel([
+    Animated.sequence([
       Animated.timing(this.animatedValue1, {
-        toValue: 300,
-        duration: 2000,
+        toValue: 150,
+        duration: 1000,
       }),
       Animated.spring(this.animatedValue2, {
         toValue: 3,
-        duration: 2000,
+      }),
+      Animated.timing(this.animatedValue1, {
+        toValue: 0,
+        duration: 1000,
+      }),
+      Animated.spring(this.animatedValue2, {
+        toValue: .5,
       })
     ]).start()
   }
   render() {
-    const animateStyles = {
+    const animatedStyle = {
       transform: [{
         translateY: this.animatedValue1
       }, {
@@ -28,11 +39,11 @@ class ParallelDemo extends Component {
       }]
     }
     return (
-      <View style={styles.container} >
-        <Animated.View style={[styles.box, animateStyles]} />
+      <View style={styles.container}>
+        <Animated.View style={[styles.box, animatedStyle]} />
       </View>
     )
   }
 }
 
-export default ParallelDemo
+export default AnimationSequence

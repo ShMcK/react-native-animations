@@ -5,6 +5,11 @@ import styles from './styles'
 const { height } = Dimensions.get('window')
 
 class StaggerDemo extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Stagger',
+    }
+  }
   componentWillMount() {
     this.animatedValue1 = new Animated.Value(0)
     this.animatedValue2 = new Animated.Value(0)

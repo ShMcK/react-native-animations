@@ -3,6 +3,11 @@ import { View, Text, Animated } from 'react-native'
 import styles from './styles'
 
 class RotateDemo extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Rotate',
+    }
+  }
   componentWillMount() {
     this.animatedValue = new Animated.Value(0)
   }
@@ -24,9 +29,7 @@ class RotateDemo extends Component {
     }
     return (
       <View style={styles.container}>
-        <Animated.View style={[styles.box, animatedStyle]}>
-          <Text style={styles.text}>Spinner</Text>
-        </Animated.View>
+        <Animated.View style={[styles.box, animatedStyle]} />
       </View>
     )
   }

@@ -8,13 +8,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    height: 100,
-    width: 100,
-    backgroundColor: 'black'
+    height: 200,
+    width: 200,
   },
-  text: {
-    color: 'white'
-  }
 })
 
 export default styles

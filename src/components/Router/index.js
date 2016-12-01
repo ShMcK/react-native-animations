@@ -1,62 +1,32 @@
-import React, { Component } from 'react'
-import { Navigator } from 'react-native'
-import NavigationBarRouteMapper from './routeMapper'
-import styles from './styles'
+import { createRouter } from '@exponent/ex-navigation'
 
 // Routes
 import Home from '../Home'
-import TransitionDemo from '../Demos/Transition'
-import ScaleDemo from '../Demos/Scale'
-import DraggableDemo from '../Demos/Draggable'
-import ColorDemo from '../Demos/Colors'
-import RotateDemo from '../Demos/Rotate'
-import SequenceDemo from '../Demos/Sequence'
-import StaggerDemo from '../Demos/Stagger'
-import ParallelDemo from '../Demos/Parallel'
-import FlipCardDemo from '../Demos/FlipCard'
-import CardUpDemo from '../Demos/CardUp'
-import GestureDemo from '../Demos/Gesture'
+import TransitionDemo from '../../demos/Transition'
+import ScaleDemo from '../../demos/Scale'
+import DraggableDemo from '../../demos/Draggable'
+import ColorDemo from '../../demos/Colors'
+import RotateDemo from '../../demos/Rotate'
+import SequenceDemo from '../../demos/Sequence'
+import StaggerDemo from '../../demos/Stagger'
+import ParallelDemo from '../../demos/Parallel'
+import FlipCardDemo from '../../demos/FlipCard'
+import CardUpDemo from '../../demos/CardUp'
+import GestureDemo from '../../demos/Gesture'
 
-export default class Router extends Component {
-  renderScene(route, navigator) {
-    switch (route.title) {
-      case 'Transition':
-        return <TransitionDemo navigator={navigator} />
-      case 'Scale':
-        return <ScaleDemo navigator={navigator} />
-      case 'Draggable':
-        return <DraggableDemo navigator={navigator} />
-      case 'Colors':
-        return <ColorDemo navigator={navigator} />
-      case 'Rotate':
-        return <RotateDemo navigator={navigator} />
-      case 'Sequence':
-        return <SequenceDemo navigator={navigator} />
-      case 'Stagger':
-        return <StaggerDemo navigator={navigator} />
-      case 'Parallel':
-        return <ParallelDemo navigator={navigator} />
-      case 'FlipCard':
-        return <FlipCardDemo navigator={navigator} />
-      case 'CardUp':
-        return <CardUpDemo navigator={navigator} />
-      case 'Gesture':
-        return <GestureDemo navigator={navigator} />
-      default:
-        return <Home navigator={navigator} />
-    }
-  }
-  render() {
-    return (
-      <Navigator
-        initialRoute={{ name: 'Home', title: 'Home' }}
-        renderScene={this.renderScene}
-        navigationBar={
-          <Navigator.NavigationBar
-            style={styles.navigationBar}
-            routeMapper={NavigationBarRouteMapper} />
-        }
-      />
-    )
-  }
-}
+const Router = createRouter(() => ({
+  Home: () => Home,
+  Transition: () => TransitionDemo,
+  Scale: () => ScaleDemo,
+  Draggable: () => DraggableDemo,
+  Colors: () => ColorDemo,
+  Rotate: () => RotateDemo,
+  Sequence: () => SequenceDemo,
+  Parallel: () => ParallelDemo,
+  Stagger: () => StaggerDemo,
+  FlipCard: () => FlipCardDemo,
+  CardMove: () => CardUpDemo,
+  Gesture: () => GestureDemo,
+}))
+
+export default Router

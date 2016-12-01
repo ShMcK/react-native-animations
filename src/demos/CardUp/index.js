@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
-import { View, Animated, Text, TextInput, Dimensions } from 'react-native'
+import { View, Animated, Text, TextInput } from 'react-native'
 import styles from './styles'
 
 class ParallelDemo extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Card Move',
+    }
+  }
   componentWillMount() {
     this.currentState = 'middle'
     this.avBarY = new Animated.Value(275)

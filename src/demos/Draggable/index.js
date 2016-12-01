@@ -7,6 +7,11 @@ import {
 import styles from './styles'
 
 class Draggable extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Draggable',
+    }
+  }
   componentWillMount() {
     this.createXYAnimation()
   }

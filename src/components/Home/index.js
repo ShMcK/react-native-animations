@@ -4,10 +4,11 @@
  */
 
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import styles from './styles'
 
-import Demo from './Demo'
+import Router from '../Router'
+import Demo from '../Demo'
 
 class Home extends Component {
   constructor(props) {
@@ -23,15 +24,13 @@ class Home extends Component {
         'Stagger',
         'Parallel',
         'FlipCard',
-        'CardUp',
+        'CardMove',
         'Gesture',
       ]
     }
   }
   routeTo(title) {
-    this.props.navigator.push({
-      title
-    })
+    this.props.navigator.push(Router.getRoute(title))
   }
   demoList() {
     return this.state.demos.map((title, i) => {

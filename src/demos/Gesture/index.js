@@ -3,6 +3,11 @@ import { View, Animated } from 'react-native'
 import styles from './styles'
 
 class GestureDemo extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Gestures',
+    }
+  }
   componentWillMount() {
     this.gesturePosY = null
     this.gestureThreshold = 75

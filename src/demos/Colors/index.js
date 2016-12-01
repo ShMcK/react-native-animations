@@ -3,6 +3,11 @@ import { View, Text, Animated } from 'react-native'
 import styles from './styles'
 
 class ColorDemo extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Colors',
+    }
+  }
   componentWillMount() {
     this.animatedValue = new Animated.Value(0)
   }
@@ -18,10 +23,7 @@ class ColorDemo extends Component {
       outputRange: ['rgb(0, 0, 0)', 'rgb(51, 250, 170)']
     })
     const animatedStyle = {
-      backgroundColor: interpolateColor,
-      transform: [
-        { translateY: this.animatedValue }
-      ]
+      backgroundColor: interpolateColor
     }
     return (
       <View style={styles.container}>

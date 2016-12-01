@@ -3,6 +3,11 @@ import { View, Animated, Easing } from 'react-native'
 import styles from './styles'
 
 class TransitionDemo extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Transition',
+    }
+  }
   componentWillMount() {
     this.animatedValue = new Animated.Value(100)
   }

@@ -3,6 +3,11 @@ import { View, Text, Animated, TouchableOpacity } from 'react-native'
 import styles from './styles'
 
 class FlipCardDemo extends Component {
+  static route = {
+    navigationBar: {
+      title: 'FlipCard',
+    }
+  }
   componentWillMount() {
     this.animatedValue = new Animated.Value(0)
     // value listener

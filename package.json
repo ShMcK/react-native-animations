@@ -10,6 +10,7 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"@exponent/ex-navigation": "^2.1.4",
 		"react": "~15.4.0-rc.4",
 		"react-native": "0.38.0"
 	},
@@ -17,6 +18,7 @@
 		"babel-eslint": "^7.1.1",
 		"babel-jest": "17.0.2",
 		"babel-preset-react-native": "1.9.0",
+		"babel-preset-react-native-stage-0": "^1.0.1",
 		"eslint": "^3.11.0",
 		"eslint-config-react-app": "^0.3.0",
 		"eslint-plugin-flowtype": "^2.28.2",
@@ -37,7 +39,10 @@
 				1,
 				"never"
 			],
-			"quotes": [1, "single"]
+			"quotes": [
+				1,
+				"single"
+			]
 		}
 	}
 }
