@@ -26,6 +26,7 @@ class Home extends Component {
         'FlipCard',
         'CardMove',
         'Gesture',
+        'MultiState Card',
       ]
     }
   }

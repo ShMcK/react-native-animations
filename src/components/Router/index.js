@@ -13,6 +13,7 @@ import ParallelDemo from '../../demos/Parallel'
 import FlipCardDemo from '../../demos/FlipCard'
 import CardUpDemo from '../../demos/CardUp'
 import GestureDemo from '../../demos/Gesture'
+import MultiStateCardDemo from '../../demos/MultipleStateCard'
 
 const Router = createRouter(() => ({
   Home: () => Home,
@@ -27,6 +28,7 @@ const Router = createRouter(() => ({
   FlipCard: () => FlipCardDemo,
   CardMove: () => CardUpDemo,
   Gesture: () => GestureDemo,
+  'MultiState Card': () => MultiStateCardDemo,
 }))
 
 export default Router
