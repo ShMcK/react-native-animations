@@ -4,6 +4,12 @@ import styles from './styles'
 
 const { height } = Dimensions.get('window')
 
+const dropAnimation = {
+  delay: 300,
+  toValue: height,
+  duration: 3000,
+}
+
 class StaggerDemo extends Component {
   static route = {
     navigationBar: {
@@ -16,31 +22,16 @@ class StaggerDemo extends Component {
     this.animatedValue3 = new Animated.Value(0)
   }
   componentDidMount() {
-    Animated.stagger(500, [
-      Animated.timing(this.animatedValue1, {
-        toValue: height,
-        duration: 3000,
-      }),
-      Animated.timing(this.animatedValue2, {
-        toValue: height,
-        duration: 3000,
-      }),
-      Animated.timing(this.animatedValue3, {
-        toValue: height,
-        duration: 3000,
-      })
+    Animated.stagger(1500, [
+      Animated.timing(this.animatedValue1, dropAnimation),
+      Animated.timing(this.animatedValue2, dropAnimation),
+      Animated.timing(this.animatedValue3, dropAnimation)
     ]).start()
   }
   render() {
-    const animatedStyle1 = {
-      height: this.animatedStyle1
-    }
-    const animatedStyle2 = {
-      height: this.animatedValue2
-    }
-    const animatedStyle3 = {
-      height: this.animatedValue3
-    }
+    const animatedStyle1 = { height: this.animatedStyle1 }
+    const animatedStyle2 = { height: this.animatedValue2 }
+    const animatedStyle3 = { height: this.animatedValue3 }
     return (
       <View style={styles.container}>
         <Animated.View style={[styles.box, { backgroundColor: 'red' }, animatedStyle1]} />

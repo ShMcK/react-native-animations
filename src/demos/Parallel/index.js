@@ -15,6 +15,7 @@ class ParallelDemo extends Component {
   componentDidMount() {
     Animated.parallel([
       Animated.timing(this.animatedValue1, {
+        delay: 800,
         toValue: 300,
         duration: 2000,
       }),

@@ -6,31 +6,21 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
 import styles from './styles'
+import demos from '../../demos/demos.json'
 
-import Router from '../Router'
+import routes from '../../routes'
 import Demo from '../Demo'
 
 class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      demos: [
-        'Scale',
-        'Draggable',
-        'Colors',
-        'Sequence',
-        'Stagger',
-        'Parallel',
-        'FlipCard',
-        'MultiState Card',
-      ]
-    }
+    this.state = { demos }
   }
   routeTo(title) {
-    this.props.navigator.push(Router.getRoute(title))
+    this.props.navigator.push(routes.getRoute(title))
   }
   demoList() {
-    return this.state.demos.map((title, i) => {
+    return this.state.demos.map(({title}, i) => {
       return (
         <View key={i} >
           <Demo

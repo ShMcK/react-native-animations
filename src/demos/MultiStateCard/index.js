@@ -4,10 +4,10 @@ import styles from './styles'
 
 const height = Dimensions.get('window').height
 
-class ParallelDemo extends Component {
+class MultiStateDemo extends Component {
   static route = {
     navigationBar: {
-      title: 'Card Move',
+      title: 'MultiState Card',
     }
   }
   constructor(props) {
@@ -180,4 +180,4 @@ class ParallelDemo extends Component {
   }
 }
 
-export default ParallelDemo
+export default MultiStateDemo

@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Scale",
+    "type": "Transform"
+  },
+  {
+    "title": "FlipCard",
+    "type": "Transform"
+  },
+  {
+    "title": "Sequence",
+    "type": "Animation"
+  },
+  {
+    "title": "Parallel",
+    "type": "Animation"
+  },
+  {
+    "title": "Stagger",
+    "type": "Animation"
+  },
+  {
+    "title": "Colors",
+    "type": "Interpolate"
+  },
+  {
+    "title": "Draggable",
+    "type": "Pan Responder"
+  },
+  {
+    "title": "MultiState Card",
+    "type": "Multi"
+  }
+]
