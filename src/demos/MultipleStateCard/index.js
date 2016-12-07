@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Animated, Text, TextInput, Dimensions } from 'react-native'
+import { View, Animated, Text, TextInput, Dimensions, TouchableOpacity } from 'react-native'
 import styles from './styles'
 
 const height = Dimensions.get('window').height
@@ -10,8 +10,13 @@ class ParallelDemo extends Component {
       title: 'Card Move',
     }
   }
+  constructor(props) {
+    super(props)
+    this.state = {
+      position: 'card',
+    }
+  }
   componentWillMount() {
-    this.currentState = 'card'
     this.avBarY = new Animated.Value(height)
     this.avCardY = new Animated.Value(300)
     this.avButton = new Animated.Value(600)
@@ -32,8 +37,8 @@ class ParallelDemo extends Component {
     }
   }
   onSwipeUp() {
-    if (this.currentState === 'card') {
-      setTimeout(() => this.currentState = 'list', 300)
+    if (this.state.position === 'card') {
+      setTimeout(() => this.setState({ position: 'list' }), 300)
       Animated.parallel([
         Animated.timing(this.avBarY, {
           toValue: -0,
@@ -52,8 +57,8 @@ class ParallelDemo extends Component {
           duration: this.animationDuration + 100,
         }),
       ]).start()
-    } else if (this.currentState === 'search') {
-      setTimeout(() => this.currentState = 'card', 300)
+    } else if (this.state.position === 'search') {
+      setTimeout(() => this.setState({ position: 'card' }), 300)
       Animated.parallel([
         Animated.timing(this.avBarY, {
           toValue: 275,
@@ -75,8 +80,8 @@ class ParallelDemo extends Component {
     }
   }
   onSwipeDown() {
-    if (this.currentState === 'list') {
-      setTimeout(() => this.currentState = 'card', 300)
+    if (this.state.position === 'list') {
+      setTimeout(() => this.setState({ position: 'card' }), 300)
       Animated.parallel([
         Animated.timing(this.avBarY, {
           toValue: 275,
@@ -96,8 +101,8 @@ class ParallelDemo extends Component {
           duration: this.animationDuration,
         }),
       ]).start()
-    } else if (this.currentState === 'card') {
-      setTimeout(() => this.currentState = 'search', 300)
+    } else if (this.state.position === 'card') {
+      setTimeout(() => this.setState({ position: 'search' }), 300)
       Animated.parallel([
         Animated.timing(this.avBarY, {
           toValue: 600,
@@ -139,6 +144,19 @@ class ParallelDemo extends Component {
     return (
       <View style={styles.container} >
 
+        {this.state.position === 'search'
+          ? <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                this.setState({ position: 'list' })
+                this.onSwipeUp()
+              }}
+            >
+              <Text style={styles.buttonText}>View Card</Text>
+            </TouchableOpacity>
+          : null
+        }
+
         <Animated.View style={[styles.searchBar, barAnimation]}>
           <TextInput style={[styles.searchBarInput]} />
         </Animated.View>
@@ -148,7 +166,10 @@ class ParallelDemo extends Component {
             this.gesturePosY = e.nativeEvent.locationY
           } }
           onMoveShouldSetResponder={(e) => this.detectSwipe(e.nativeEvent.locationY)}
-          />
+          >
+          <Text style={[styles.directions, styles.title]}>Swipe me</Text>
+          <Text style={styles.directions}>Up or Down</Text>
+        </Animated.View>
 
         <Animated.View style={[styles.button, buttonAnimation]}>
           <Text style={styles.buttonText}> Go </Text>

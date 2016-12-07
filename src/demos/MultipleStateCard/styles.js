@@ -10,8 +10,11 @@ const styles = StyleSheet.create({
   box: {
     height: Dimensions.get('window').height * 0.75,
     width: Dimensions.get('window').width * 0.9,
-    backgroundColor: 'black',
+    backgroundColor: 'grey',
     borderRadius: 10,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    padding: 20,
   },
   text: {
     color: 'white'
@@ -37,6 +40,13 @@ const styles = StyleSheet.create({
     height: 30, 
     width: Dimensions.get('window').width * 0.5, 
   },
+  directions: {
+    color: 'white',
+    fontSize: 24,
+  },
+  title: {
+    fontSize: 32,
+  }
 })
 
 export default styles

@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 64,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -21,7 +20,22 @@ const styles = StyleSheet.create({
     top: 0,
   },
   flipText: {
-    color: 'white'
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 24,
+  },
+  button: {
+    marginTop: 10,
+    backgroundColor: 'orange',
+    borderRadius: 8,
+    width: 100,
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
   }
 })
 

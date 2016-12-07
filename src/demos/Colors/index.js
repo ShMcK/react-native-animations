@@ -20,7 +20,7 @@ class ColorDemo extends Component {
   render() {
     const interpolateColor = this.animatedValue.interpolate({
       inputRange: [0, 150],
-      outputRange: ['rgb(0, 0, 0)', 'rgb(51, 250, 170)']
+      outputRange: ['rgb(0, 0, 0)', 'rgb(51, 250, 170)', ]
     })
     const animatedStyle = {
       backgroundColor: interpolateColor

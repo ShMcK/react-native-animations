@@ -15,17 +15,13 @@ class Home extends Component {
     super(props)
     this.state = {
       demos: [
-        'Transition',
         'Scale',
         'Draggable',
         'Colors',
-        'Rotate',
         'Sequence',
         'Stagger',
         'Parallel',
         'FlipCard',
-        'CardMove',
-        'Gesture',
         'MultiState Card',
       ]
     }

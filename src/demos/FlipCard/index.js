@@ -55,17 +55,19 @@ class FlipCardDemo extends Component {
         <View>
           <Animated.View style={[styles.flipCard, frontAnimatedStyle]}>
             <Text style={styles.flipText}>
-              This text is flipping on the front.
+              Front
           </Text>
           </Animated.View>
           <Animated.View style={[styles.flipCard, styles.flipCardBack, backAnimatedStyle]}>
             <Text style={styles.flipText}>
-              This text is flipping on the back.
+              Back
           </Text>
           </Animated.View>
         </View>
-        <TouchableOpacity onPress={this.flipCard.bind(this)}>
-          <Text>Flip!</Text>
+        <TouchableOpacity
+          onPress={this.flipCard.bind(this)}
+          style={styles.button}>
+          <Text style={styles.buttonText}>Flip!</Text>
         </TouchableOpacity>
       </View>
 
