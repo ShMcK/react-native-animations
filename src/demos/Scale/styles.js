@@ -7,14 +7,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   button: {
-    backgroundColor: '#333',
+    backgroundColor: 'green',
     width: 100,
-    height: 50,
+    height: 100,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderRadius: 50,
+    shadowOffset: {
+      width: 2,
+      height: 2,
+    },
+    shadowColor: 'grey',
+    shadowRadius: 2,
+    shadowOpacity: 0.5,
   },
   text: {
     color: '#FFF',
+    fontWeight: 'bold',
   },
 })
 

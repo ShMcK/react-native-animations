@@ -18,14 +18,16 @@ class ScaleDemo extends Component {
   }
   handlePressIn() {
     Animated.spring(this.animatedValue, {
-      toValue: .5
+      toValue: 0,
+      friction: 6,
+      tension: 40,
     }).start()
   }
   handlePressOut() {
     Animated.spring(this.animatedValue, {
-      toValue: 1,
-      friction: 3,
-      tension: 40
+      toValue: 2,
+      friction: 6,
+      tension: 40,
     }).start()
   }
   render() {
