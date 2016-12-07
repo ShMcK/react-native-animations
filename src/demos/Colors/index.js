@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Animated } from 'react-native'
+import { View, Animated } from 'react-native'
 import styles from './styles'
 
 class ColorDemo extends Component {

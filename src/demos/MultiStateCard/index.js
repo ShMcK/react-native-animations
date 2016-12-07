@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Animated, Text, TextInput, Dimensions, TouchableOpacity } from 'react-native'
 import styles from './styles'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 const height = Dimensions.get('window').height
 
@@ -167,8 +168,7 @@ class MultiStateDemo extends Component {
           } }
           onMoveShouldSetResponder={(e) => this.detectSwipe(e.nativeEvent.locationY)}
           >
-          <Text style={[styles.directions, styles.title]}>Swipe me</Text>
-          <Text style={styles.directions}>Up or Down</Text>
+          <Icon name='arrows-v' size={60} color='white' />
         </Animated.View>
 
         <Animated.View style={[styles.button, buttonAnimation]}>

@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-import {
-  Text, View,
-  Animated,
-  PanResponder
-} from 'react-native'
+import { View, Animated, PanResponder } from 'react-native'
 import styles from './styles'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 class Draggable extends Component {
   static route = {
@@ -55,7 +52,7 @@ class Draggable extends Component {
     return (
       <View style={styles.container}>
         <Animated.View style={[styles.box, animatedStyle]} {...this.panResponder.panHandlers}>
-          <Text style={styles.text}>Drag Me</Text>
+          <Icon name='arrows' size={80} color='lightgrey' />
         </Animated.View>
       </View>
     )
