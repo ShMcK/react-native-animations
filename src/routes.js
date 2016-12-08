@@ -11,6 +11,7 @@ import ParallelDemo from './demos/Parallel'
 import FlipCardDemo from './demos/FlipCard'
 import MultiStateCardDemo from './demos/MultiStateCard'
 import DownloadDemo from './demos/Download'
+import LikeDemo from './demos/Like'
 
 const Router = createRouter(() => ({
   Home: () => Home,
@@ -23,6 +24,7 @@ const Router = createRouter(() => ({
   FlipCard: () => FlipCardDemo,
   'MultiState Card': () => MultiStateCardDemo,
   Download: () => DownloadDemo,
+  Like: () => LikeDemo,
 }))
 
 export default Router
