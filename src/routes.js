@@ -10,6 +10,7 @@ import StaggerDemo from './demos/Stagger'
 import ParallelDemo from './demos/Parallel'
 import FlipCardDemo from './demos/FlipCard'
 import MultiStateCardDemo from './demos/MultiStateCard'
+import DownloadDemo from './demos/Download'
 
 const Router = createRouter(() => ({
   Home: () => Home,
@@ -21,6 +22,7 @@ const Router = createRouter(() => ({
   Stagger: () => StaggerDemo,
   FlipCard: () => FlipCardDemo,
   'MultiState Card': () => MultiStateCardDemo,
+  Download: () => DownloadDemo,
 }))
 
 export default Router
