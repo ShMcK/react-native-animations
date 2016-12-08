@@ -37,15 +37,13 @@ class SearchBar extends Component {
     Animated.parallel([
       Animated.spring(this.pavScale, {
         toValue: 0,
-        friction: 8,
       }),
       Animated.spring(this.pavY, {
-        toValue: 100,
-        friction: 18,
+        toValue: 50,
       }),
       Animated.spring(this.savScale, {
         toValue: 1,
-        delay: 300,
+        delay: 400,
       })
     ]).start()
   }
