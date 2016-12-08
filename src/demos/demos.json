@@ -32,9 +32,15 @@
     "type": "Multi"
   },
   {
-    "title": "Download"
+    "title": "Download",
+    "type": "Example"
   },
   {
-    "title": "Like"
+    "title": "Like",
+    "type": "UI"
+  },
+  {
+    "title": "SearchBar",
+    "type": "UI"
   }
 ]
