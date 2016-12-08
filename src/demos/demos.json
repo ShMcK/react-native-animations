@@ -1,46 +1,57 @@
 [
   {
     "title": "Scale",
-    "type": "Transform"
+    "type": "Transform",
+    "icon": "plus"
   },
   {
     "title": "FlipCard",
-    "type": "Transform"
+    "type": "Transform",
+    "icon": "rotate-left"
   },
   {
     "title": "Sequence",
-    "type": "Animation"
+    "type": "Animation",
+    "icon": "sort-amount-asc"
   },
   {
     "title": "Parallel",
-    "type": "Animation"
+    "type": "Animation",
+    "icon": "random"
   },
   {
     "title": "Stagger",
-    "type": "Animation"
+    "type": "Animation",
+    "icon": "reorder"
   },
   {
     "title": "Colors",
-    "type": "Interpolate"
+    "type": "Interpolate",
+    "icon": "paint-brush"
   },
   {
     "title": "Draggable",
-    "type": "Pan Responder"
+    "type": "Pan Responder",
+    "icon": "arrows"
   },
   {
     "title": "MultiState Card",
-    "type": "Multi"
+    "type": "Multi",
+    "icon": "arrows-v"
   },
   {
     "title": "Download",
-    "type": "Example"
+    "type": "Example",
+    "icon": "download"
   },
   {
     "title": "Like",
-    "type": "UI"
+    "type": "UI",
+    "icon": "heart"
   },
   {
     "title": "SearchBar",
-    "type": "UI"
+    "type": "UI",
+    "icon": "search"
   }
 ]

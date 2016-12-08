@@ -20,11 +20,12 @@ class Home extends Component {
     this.props.navigator.push(routes.getRoute(title))
   }
   demoList() {
-    return this.state.demos.map(({title}, i) => {
+    return this.state.demos.map(({title, icon}, i) => {
       return (
         <View key={i} >
           <Demo
             title={title}
+            icon={icon}
             routeTo={this.routeTo.bind(this, title)} />
         </View>
       )
